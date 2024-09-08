@@ -8,8 +8,8 @@
 import UIKit
 
 final class MiniAppsTableViewCell: UITableViewCell {
-    private lazy var view: UIView = {
-        let view = UIView()
+    private lazy var view: CustomView = {
+        let view = CustomView()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -26,11 +26,11 @@ final class MiniAppsTableViewCell: UITableViewCell {
     }
     
     override func prepareForReuse() {
-        self.view = UIView()
+        self.view.view = UIView()
     }
     
     func setup(with view: UIView) {
-        self.view = view
+        self.view.view = view
     }
     
     private func setupViews() {
