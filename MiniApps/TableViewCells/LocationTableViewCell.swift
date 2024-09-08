@@ -1,15 +1,16 @@
 //
-//  MiniAppsTableViewCell.swift
+//  LocationTableViewCell.swift
 //  MiniApps
 //
 //  Created by Yoji on 08.09.2024.
 //
 
 import UIKit
+import LocationPackage
 
-final class MiniAppsTableViewCell: UITableViewCell {
-    private lazy var view: CustomView = {
-        let view = CustomView()
+final class LocationTableViewCell: UITableViewCell, TableViewCellWithSetup {
+    private lazy var view: LocationView = {
+        let view = LocationView()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -26,11 +27,10 @@ final class MiniAppsTableViewCell: UITableViewCell {
     }
     
     override func prepareForReuse() {
-        self.view.view = UIView()
     }
     
-    func setup(with view: UIView) {
-        self.view.view = view
+    func setup(with frame: CGRect, large: Bool) {
+        self.view.frame = frame
     }
     
     private func setupViews() {

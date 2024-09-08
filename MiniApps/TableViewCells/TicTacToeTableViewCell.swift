@@ -9,12 +9,6 @@ import UIKit
 import TicTacToe
 
 final class TicTacToeTableViewCell: UITableViewCell, TableViewCellWithSetup {
-    private lazy var view: TicTacToeView = {
-        let view = TicTacToeView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
-    
     // MARK: Lifecycle
     @available(*, unavailable)
     required init?(coder: NSCoder) {
@@ -23,24 +17,33 @@ final class TicTacToeTableViewCell: UITableViewCell, TableViewCellWithSetup {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        self.setupViews()
     }
     
     override func prepareForReuse() {
     }
     
-    func setup(with frame: CGRect) {
-        self.view.frame = frame
-    }
-    
-    private func setupViews() {
-        self.contentView.addSubview(self.view)
+    func setup(with frame: CGRect, large: Bool) {
+        let width = frame.width
+        let height = frame.height
+        let less = width > height ? height : width
+        let newFrame = CGRect(x: 0, y: 0, width: less, height: less)
+        
+        let view = TicTacToeView(frame: newFrame)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.isUserInteractionEnabled = large
+        
+        self.contentView.addSubview(view)
+        
+        let heightAnchor = self.contentView.heightAnchor
+        let widthAnchor = self.contentView.widthAnchor
+        
+        let lessAnchor = width > height ? heightAnchor : widthAnchor
         
         NSLayoutConstraint.activate([
-            self.view.topAnchor.constraint(equalTo: self.contentView.topAnchor),
-            self.view.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor),
-            self.view.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor),
-            self.view.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor)
+            view.topAnchor.constraint(equalTo: self.contentView.topAnchor),
+            view.centerXAnchor.constraint(equalTo: self.contentView.centerXAnchor),
+            view.heightAnchor.constraint(equalTo: lessAnchor),
+            view.widthAnchor.constraint(equalTo: lessAnchor)
         ])
     }
 }

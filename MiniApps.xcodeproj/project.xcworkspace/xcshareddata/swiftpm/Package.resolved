@@ -1,5 +1,5 @@
 {
-  "originHash" : "05d305a962b0f6183c07bd43a53711fd6ec753ea25b866926c3511c735c5fe72",
+  "originHash" : "3424099863407a4edf690ff55686ad386cbbc995e65965e00395cc970b5ead8b",
   "pins" : [
     {
       "identity" : "locationpackage",
@@ -7,7 +7,7 @@
       "location" : "https://github.com/Yoji-kms/LocationPackage",
       "state" : {
         "branch" : "main",
-        "revision" : "1fc8199e31bb28a00755cc99bbe191d25d35ba89"
+        "revision" : "b05eb1f0271c6998bfa900d1b63962ef9ae14145"
       }
     },
     {
@@ -25,7 +25,7 @@
       "location" : "https://github.com/Yoji-kms/TicTacToe",
       "state" : {
         "branch" : "main",
-        "revision" : "6a2d31f45ed99446582e2e1f4fc907a9a5268953"
+        "revision" : "c5b63eec192cb560097eed0631e979c8802c11db"
       }
     },
     {
@@ -43,7 +43,7 @@
       "location" : "https://github.com/Yoji-kms/WeatherPackage",
       "state" : {
         "branch" : "main",
-        "revision" : "aa43f7b68d340bac6941029ccb6f1dec9b8546ef"
+        "revision" : "23f38814678d9df8ee3ff60ee9af08c2be2bbd45"
       }
     }
   ],

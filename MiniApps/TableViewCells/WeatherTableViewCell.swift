@@ -29,7 +29,7 @@ final class WeatherTableViewCell: UITableViewCell, TableViewCellWithSetup {
     override func prepareForReuse() {
     }
     
-    func setup(with frame: CGRect) {
+    func setup(with frame: CGRect, large: Bool) {
         self.view.frame = frame
     }
     
