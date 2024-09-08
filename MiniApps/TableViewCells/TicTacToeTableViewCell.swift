@@ -22,7 +22,7 @@ final class TicTacToeTableViewCell: UITableViewCell, TableViewCellWithSetup {
     override func prepareForReuse() {
     }
     
-    func setup(with frame: CGRect, large: Bool) {
+    func setup(with frame: CGRect, large: Bool, backgroundColor: UIColor) {
         let width = frame.width
         let height = frame.height
         let less = width > height ? height : width
@@ -31,7 +31,9 @@ final class TicTacToeTableViewCell: UITableViewCell, TableViewCellWithSetup {
         let view = TicTacToeView(frame: newFrame)
         view.translatesAutoresizingMaskIntoConstraints = false
         view.isUserInteractionEnabled = large
+        view.backgroundColor = backgroundColor
         
+        self.contentView.backgroundColor = backgroundColor
         self.contentView.addSubview(view)
         
         let heightAnchor = self.contentView.heightAnchor

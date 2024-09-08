@@ -6,12 +6,21 @@
 //
 
 import UIKit
-//import TicTacToe
-//import WeatherPackage
-//import LocationPackage
 
 final class MiniAppsViewModel {
-    private(set) var data: [ViewTypes]
+    private(set) var data: [Model]
+    
+    let backgroundColors: [UIColor] = [
+        .white,
+        .systemMint,
+        .systemPink,
+        .systemBlue
+    ]
+    
+    struct Model {
+        let viewType: ViewTypes
+        let backgroundColor: UIColor
+    }
     
     enum ViewTypes: CaseIterable {
         case ticTacToe
@@ -21,18 +30,19 @@ final class MiniAppsViewModel {
     
     init() {
         self.data = [
-            .ticTacToe,
-            .location,
-            .weather,
-            ViewTypes.allCases.randomElement() ?? .location,
-            ViewTypes.allCases.randomElement() ?? .location,
-            ViewTypes.allCases.randomElement() ?? .location,
-            ViewTypes.allCases.randomElement() ?? .location,
-            ViewTypes.allCases.randomElement() ?? .location,
-            ViewTypes.allCases.randomElement() ?? .location,
-            ViewTypes.allCases.randomElement() ?? .location,
-            ViewTypes.allCases.randomElement() ?? .location
+            Model(viewType: .ticTacToe, backgroundColor: .white),
+            Model(viewType: .location, backgroundColor: .systemRed),
+            Model(viewType: .weather, backgroundColor: .systemCyan),
         ]
+        for _ in 1..<10 {
+            let model = Model(
+                viewType: ViewTypes.allCases.randomElement() ?? .location,
+                backgroundColor: backgroundColors.randomElement() ?? .white
+            )
+            self.data.append(model)
+        }
     }
     
 }
+
+

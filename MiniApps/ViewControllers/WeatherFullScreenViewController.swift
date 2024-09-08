@@ -18,8 +18,18 @@ final class WeatherFullScreenViewController: UIViewController {
 // MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .white
         self.setupViews()
+    }
+    
+    init(backgroundColor: UIColor) {
+        super.init(nibName: nil, bundle: nil)
+        self.view.backgroundColor = backgroundColor
+        self.weatherView.backgroundColor = backgroundColor
+    }
+    
+    @available(*, unavailable)
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
 //    MARK: Setups

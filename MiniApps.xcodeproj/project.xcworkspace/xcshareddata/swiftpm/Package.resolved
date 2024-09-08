@@ -7,7 +7,7 @@
       "location" : "https://github.com/Yoji-kms/LocationPackage",
       "state" : {
         "branch" : "main",
-        "revision" : "b05eb1f0271c6998bfa900d1b63962ef9ae14145"
+        "revision" : "85b214de510aa555076738643d04cd9f9a1333bf"
       }
     },
     {
@@ -16,7 +16,7 @@
       "location" : "https://github.com/Yoji-kms/LocationService",
       "state" : {
         "branch" : "main",
-        "revision" : "0dd6452bb45a485c1cd04a9a855a2ca1dc8f6fa5"
+        "revision" : "311073f703b0997cf01fef48af9c27b03df8e3df"
       }
     },
     {
@@ -25,7 +25,7 @@
       "location" : "https://github.com/Yoji-kms/TicTacToe",
       "state" : {
         "branch" : "main",
-        "revision" : "c5b63eec192cb560097eed0631e979c8802c11db"
+        "revision" : "ff06c17f87b3af231dc1d3c9b4385a507fd0f2e8"
       }
     },
     {
@@ -43,7 +43,7 @@
       "location" : "https://github.com/Yoji-kms/WeatherPackage",
       "state" : {
         "branch" : "main",
-        "revision" : "23f38814678d9df8ee3ff60ee9af08c2be2bbd45"
+        "revision" : "bcde04417e2b1ee4e69a0b68e0afe4bc21c4de34"
       }
     }
   ],

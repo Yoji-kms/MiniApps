@@ -6,9 +6,6 @@
 //
 
 import UIKit
-import TicTacToe
-import WeatherPackage
-import LocationPackage
 
 class ViewController: UIViewController {
 //    MARK: Variables
@@ -78,6 +75,12 @@ class ViewController: UIViewController {
         self.setupNavigation()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.tableView.reloadData()
+    }
+
+    
 //    MARK: Setups
     private func setupViews() {
         self.view.addSubview(self.tableView)
@@ -127,13 +130,15 @@ extension ViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let pushingViewController: UIViewController = switch self.viewModel.data[indexPath.row] {
+        let data = self.viewModel.data[indexPath.row]
+        
+        let pushingViewController: UIViewController = switch data.viewType {
         case .ticTacToe:
-            TicTacToeFullScreenViewController()
+            TicTacToeFullScreenViewController(backgroundColor: data.backgroundColor)
         case .weather:
-            WeatherFullScreenViewController()
+            WeatherFullScreenViewController(backgroundColor: data.backgroundColor)
         case .location:
-            LocationFullScreenViewController()
+            LocationFullScreenViewController(backgroundColor: data.backgroundColor)
         }
         
         self.navigationController?.pushViewController(pushingViewController, animated: true)
@@ -149,7 +154,9 @@ extension ViewController: UITableViewDataSource {
         let height = self.tableRowHeight
         let width = self.tableView.frame.width
         let frame = CGRect(x: 0, y: 0, width: width, height: height)
-        let type = self.viewModel.data[indexPath.row]
+        let data = self.viewModel.data[indexPath.row]
+        let type = data.viewType
+        let backgroundColor = data.backgroundColor
         
         guard
             let cell: TableViewCellWithSetup = switch type {
@@ -166,7 +173,7 @@ extension ViewController: UITableViewDataSource {
         
         let large = self.rowHeight == .large
         
-        cell.setup(with: frame, large: large)
+        cell.setup(with: frame, large: large, backgroundColor: backgroundColor)
         
         return cell
     }

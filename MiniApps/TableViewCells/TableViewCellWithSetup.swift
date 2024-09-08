@@ -8,5 +8,5 @@
 import UIKit
 
 protocol TableViewCellWithSetup: UITableViewCell {
-    func setup (with frame: CGRect, large: Bool)
+    func setup (with frame: CGRect, large: Bool, backgroundColor: UIColor)
 }

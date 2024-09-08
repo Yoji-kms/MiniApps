@@ -29,8 +29,10 @@ final class WeatherTableViewCell: UITableViewCell, TableViewCellWithSetup {
     override func prepareForReuse() {
     }
     
-    func setup(with frame: CGRect, large: Bool) {
+    func setup(with frame: CGRect, large: Bool, backgroundColor: UIColor) {
         self.view.frame = frame
+        self.contentView.backgroundColor = backgroundColor
+        self.view.backgroundColor = backgroundColor
     }
     
     private func setupViews() {
