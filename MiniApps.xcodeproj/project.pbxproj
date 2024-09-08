@@ -6,6 +6,12 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		F9C995502C8CD676004DC95E /* TicTacToe in Frameworks */ = {isa = PBXBuildFile; productRef = F9C9954F2C8CD676004DC95E /* TicTacToe */; };
+		F9C995702C8DD7E1004DC95E /* WeatherPackage in Frameworks */ = {isa = PBXBuildFile; productRef = F9C9956F2C8DD7E1004DC95E /* WeatherPackage */; };
+		F9C995732C8DE0EE004DC95E /* LocationPackage in Frameworks */ = {isa = PBXBuildFile; productRef = F9C995722C8DE0EE004DC95E /* LocationPackage */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		F9C995302C887270004DC95E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -33,31 +39,17 @@
 		F9C995412C887270004DC95E /* Exceptions for "MiniApps" folder in "MiniApps" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				"/Localized: LaunchScreen.storyboard",
-				"/Localized: Main.storyboard",
 				Info.plist,
 			);
 			target = F9C995182C88726D004DC95E /* MiniApps */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
-/* Begin PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
-		F9C995452C887270004DC95E /* Exceptions for "MiniApps" folder in "Copy Bundle Resources" phase from "MiniApps" target */ = {
-			isa = PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet;
-			buildPhase = F9C995172C88726D004DC95E /* Resources */;
-			membershipExceptions = (
-				Base.lproj/LaunchScreen.storyboard,
-				Base.lproj/Main.storyboard,
-			);
-		};
-/* End PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
-
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		F9C9951B2C88726D004DC95E /* MiniApps */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
 				F9C995412C887270004DC95E /* Exceptions for "MiniApps" folder in "MiniApps" target */,
-				F9C995452C887270004DC95E /* Exceptions for "MiniApps" folder in "Copy Bundle Resources" phase from "MiniApps" target */,
 			);
 			path = MiniApps;
 			sourceTree = "<group>";
@@ -79,6 +71,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9C995732C8DE0EE004DC95E /* LocationPackage in Frameworks */,
+				F9C995702C8DD7E1004DC95E /* WeatherPackage in Frameworks */,
+				F9C995502C8CD676004DC95E /* TicTacToe in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,6 +100,7 @@
 				F9C9951B2C88726D004DC95E /* MiniApps */,
 				F9C995322C887270004DC95E /* MiniAppsTests */,
 				F9C9953C2C887270004DC95E /* MiniAppsUITests */,
+				F9C9956E2C8DD7E1004DC95E /* Frameworks */,
 				F9C9951A2C88726D004DC95E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -117,6 +113,13 @@
 				F9C995392C887270004DC95E /* MiniAppsUITests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		F9C9956E2C8DD7E1004DC95E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,6 +142,9 @@
 			);
 			name = MiniApps;
 			packageProductDependencies = (
+				F9C9954F2C8CD676004DC95E /* TicTacToe */,
+				F9C9956F2C8DD7E1004DC95E /* WeatherPackage */,
+				F9C995722C8DE0EE004DC95E /* LocationPackage */,
 			);
 			productName = MiniApps;
 			productReference = F9C995192C88726D004DC95E /* MiniApps.app */;
@@ -222,6 +228,11 @@
 			);
 			mainGroup = F9C995102C88726D004DC95E;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				F9C9954E2C8CD676004DC95E /* XCRemoteSwiftPackageReference "TicTacToe" */,
+				F9C9956D2C8DD67C004DC95E /* XCRemoteSwiftPackageReference "WeatherPackage" */,
+				F9C995712C8DE0E2004DC95E /* XCRemoteSwiftPackageReference "LocationPackage" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = F9C9951A2C88726D004DC95E /* Products */;
 			projectDirPath = "";
@@ -306,10 +317,8 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MiniApps/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -333,10 +342,8 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MiniApps/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -577,6 +584,51 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F9C9954E2C8CD676004DC95E /* XCRemoteSwiftPackageReference "TicTacToe" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Yoji-kms/TicTacToe";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		F9C9956D2C8DD67C004DC95E /* XCRemoteSwiftPackageReference "WeatherPackage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Yoji-kms/WeatherPackage";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		F9C995712C8DE0E2004DC95E /* XCRemoteSwiftPackageReference "LocationPackage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Yoji-kms/LocationPackage";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F9C9954F2C8CD676004DC95E /* TicTacToe */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F9C9954E2C8CD676004DC95E /* XCRemoteSwiftPackageReference "TicTacToe" */;
+			productName = TicTacToe;
+		};
+		F9C9956F2C8DD7E1004DC95E /* WeatherPackage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F9C9956D2C8DD67C004DC95E /* XCRemoteSwiftPackageReference "WeatherPackage" */;
+			productName = WeatherPackage;
+		};
+		F9C995722C8DE0EE004DC95E /* LocationPackage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F9C995712C8DE0E2004DC95E /* XCRemoteSwiftPackageReference "LocationPackage" */;
+			productName = LocationPackage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F9C995112C88726D004DC95E /* Project object */;
 }
